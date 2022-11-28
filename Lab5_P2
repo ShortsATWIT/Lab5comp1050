@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+	public class Lab5P2 {
+	public static void main(String args[]) {
+
+	Scanner sc = new Scanner(System.in);
+
+	System.out.print("Enter Integers (End with character \'q\'): ");
+
+	ArrayList<Integer> list = new ArrayList<Integer>();
+
+	long count[] = new long[10000000];
+
+	String str = sc.nextLine();
+
+	String tokens[] = str.split(" +");
+
+	for (int i = 0; i < tokens.length; ++i) {
+
+	if (tokens[i].contains("q"))
+
+	break;
+
+	else {
+
+	list.add(Integer.parseInt(tokens[i]));
+
+	}
+
+	}
+	System.out.print("The distinct integers: ");
+	for (int i = 0; i < list.size(); ++i)
+
+	if (count[list.get(i)] == 0) {
+
+		System.out.print(list.get(i) + " ");
+
+	count[list.get(i)] = 1;
+
+	}
+
+	}
+	}
